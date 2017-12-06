@@ -17,4 +17,8 @@ public class Student {
     @JoinTable(name = "course_student", joinColumns = @JoinColumn(name="course_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="student_id", referencedColumnName = "id"))
     private Set<Course> courses;
+
+    public Student(User userid) {
+        this.userid = userid;
+    }
 }

@@ -9,22 +9,21 @@ public class Course {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String couserName;
+    private String name;
 
     @ManyToMany(mappedBy = "courses")
     private Set<Student> students;
 
-    public Course(String couserName, Set<Student> students) {
-        this.couserName = couserName;
-        this.students = students;
+    public Course(String couserName) {
+        this.name = couserName;
     }
 
     public String getCouserName() {
-        return couserName;
+        return name;
     }
 
     public void setCouserName(String couserName) {
-        this.couserName = couserName;
+        this.name = couserName;
     }
 
     public Long getId() {
